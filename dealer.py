@@ -12,11 +12,6 @@ class Dealer:
             result = result + card.value
         return result
 
-    def reveal_one(self):
-        if len(self.hand) > 0:
-            card = self.hand[0]
-            print(card.get_display_name())
-
     def show_hand(self):
         for card in self.hand:
             print(card.get_display_name())

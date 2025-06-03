@@ -2,8 +2,10 @@ class Player:
     def __init__(self):
         self.hand = []
 
-    def hit(self, deck, dealer):
+    def hit(self, deck, dealer, game):
         dealer.deal(self, deck)
+        if self.score() > 21:
+            game.end()
 
     def score(self):
         result = 0
@@ -15,5 +17,5 @@ class Player:
         for card in self.hand:
             print(card.get_display_name())
 
-    def stand(self):
-        ...
+    def stand(self, game):
+        game.end()
