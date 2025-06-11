@@ -10,6 +10,9 @@ class Dealer:
         result = 0
         for card in self.hand:
             result = result + card.value
+        for card in self.hand:
+            if result <= 11 and card.rank == "Ace":
+                result = result + 10
         return result
 
     def show_hand(self):
