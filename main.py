@@ -9,9 +9,10 @@ def main():
 
     while my_game.has_ended == False:
         command = input("Do you want to Hit or Stand? ")
-        if command == "Hit":
+        command = command.lower()
+        if command == "hit":
             my_game.player.hit(my_game.deck, my_game.dealer, my_game)
-        elif command == "Stand":
+        elif command == "stand":
             my_game.player.stand(my_game)
         else:
             print("Please enter a valid command")
