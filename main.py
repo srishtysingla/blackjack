@@ -17,6 +17,12 @@ def main():
         else:
             print("Please enter a valid command")
         my_game.show_status()
+    if my_game.winner == my_game.player:
+        print("You won!")
+    elif my_game.winner is None:
+        print("It is a push")
+    else:
+        print("You lost!")
 
 
 if __name__ == "__main__":
