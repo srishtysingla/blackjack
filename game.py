@@ -8,6 +8,7 @@ class Game:
         self.player = Player()
         self.dealer = Dealer()
         self.deck = Deck()
+        self.has_ended = False
 
     def setup(self):
         self.deck.shuffle()
@@ -19,7 +20,6 @@ class Game:
         self.dealer.deal(self.dealer, self.deck)
         if self.dealer.score() <= 16:
             self.dealer.deal(self.dealer, self.deck)
-        self.show_status()
         winner = self.decide_winner()
         if winner == self.player:
             print("You won!")
@@ -27,6 +27,7 @@ class Game:
             print("It is a draw")
         else:
             print("You lost!")
+        self.has_ended = True
 
     def decide_winner(self):
         player_score = self.player.score()
